@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>FORMS</title>
+        
+    </head>
+</html>
+<body>
+   <form action="insert.php" method="POST">
+    <fieldset>
+        <legend><strong>Student Information</strong></legend>
+        <h1>Registration form</h1>
+        <p>Student Name:<input type="text" name="name"></p>
+        Address:<textarea rows="4" cols="15" name="address"></textarea>
+        <p>Email ID:<input type="email" name="email"></p>
+        
+
+        <p>Gender:</p>
+        <input type="radio" name="gender" value="female">Female<br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="other">Other<br>
+        <p>Languages:</p>
+        <input type="checkbox" name="lang[]" value="html">HTML<br>
+         <input type="checkbox" name="lang[]"value="css">CSS<br>
+        <input type="checkbox" name="lang[]" value="java">JAVA<br>
+        <input type="checkbox" name="lang[]" value="python">PYTHON<br>
+        <p>DOB:</p>
+        <input type="date" name="dob" value="dob">
+        
+        <p>City:</p>
+        <select name="city" id="city">
+            <option value="karad" name="city">Karad</option>
+            <option value="satara" name="city">Satara</option>
+            <option value="pune" name="city">Pune</option>
+        </select>
+        <p><input type="submit" value="submit" name="submit"></p>
+        <p><input type="reset" value="reset" name="reset"></p>
+        </fieldset>
+   </form>
+</body>

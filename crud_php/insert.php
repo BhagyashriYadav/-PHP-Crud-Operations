@@ -1,24 +1,33 @@
 <?php
-class FB{
-    public $link='';
-    function __construct($name,$address,$email){
-        $this->connect();
-        $this->storeInDB($name,$address,$email);
-    }
-    function connect(){
-        $this->link = mysqli_connect("localhost","root","") or die('Cannot connect to the DB');
-        mysqli_select_db($this->link,'mydb') or die('Cannot select the DB');
-       }
-function storeInDB($name,$address,$email){
-    $query="INSERT INTO shri(Name,Address,Email) VALUES ('$name','$address','$email')";
-    $result = mysqli_query($this->link,$query) or die('Errant query:  '.$query);
-    echo "Registration Success";
+//include db connection
+$con=mysqli_connect("localhost","root","","forms");
 
-  }
-  
- 
-}
-if($_GET['name'] != ''and $_GET['address'] != '' and $_GET['email'] !=''){
- 	$FB=new FB($_GET['name'],$_GET['address'],$_GET['email']);
+if(isset($_POST['submit'])){
+    $NAME=$_POST['name'];
+    $ADDRESS=$_POST['address'];
+    $EMAIL=$_POST['email'];
+     $GENDER=$_POST['gender'];
+     $LANGUAGES=$_POST['lang'];
+     $chk="";
+     $DOB=$_POST['dob'];
+     $CITY=$_POST['city'];
+     foreach($LANGUAGES as $chk1)
+     {
+        $chk .=$chk1.",";
+     }
+
+    //insert data
+    echo $CITY;
+    $sql="INSERT INTO StudInfo(StudentName,Address,EmailID,Gender,Languages,DOB,City) VALUES ('$NAME','$ADDRESS','$EMAIL','$GENDER','$chk',' $DOB','$CITY')";
+    echo $sql;
+    if(mysqli_query($con,$sql))
+    {
+        echo"Record Saved";
+    }
 }
 ?>
+
+
+
+
+
