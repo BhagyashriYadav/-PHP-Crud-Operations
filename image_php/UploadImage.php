@@ -10,8 +10,8 @@ if (isset($_POST['upload'])) {
 	$tempname = $_FILES["uploadfile"]["tmp_name"];
 	$folder = "./image/" . $filename;
 
-	$db = mysqli_connect("182.50.133.77','prabudh','Prabudh@123",'prabudhbharat');
-  $filepath2='http://mymarketing.ecssofttech.com/uploaddata'.$filename;  
+	$db = mysqli_connect('localhost','root','','mydb');
+  $filepath2='./image'.$filename;  //write here image folder path
 	// Get all the submitted data from the form
   $query = "insert into UploadImage set UploadImage='".$filepath2."'";
 	//$sql = "INSERT INTO UploadImage (filename) VALUES ('$filename')";
@@ -51,7 +51,7 @@ if (isset($_POST['upload'])) {
 
 		while ($data = mysqli_fetch_assoc($result)) {
 		?>
-			<img src="http://mymarketing.ecssofttech.com/uploaddata/<?php echo $data['filename']; ?>">
+			<img src="./image/"<?php echo $data['filename']; ?>">
 
 		<?php
 		}
