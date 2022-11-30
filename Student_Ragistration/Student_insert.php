@@ -1,6 +1,6 @@
 <?php
 //include db connection
-$con=mysqli_connect("182.50.133.77","prabudh","Prabudh@123","prabudhbharat");
+$con=mysqli_connect("localhost","root","","mydb");
 
 if(isset($_POST['submit'])){
     $ID=$_POST['id'];
