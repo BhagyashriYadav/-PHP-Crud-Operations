@@ -1,7 +1,7 @@
 <?php
  
 //connect to mysql server with username password and database name
-$connect = mysqli_connect("182.50.133.77", "prabudh", "Prabudh@123", "prabudhbharat");
+$connect = mysqli_connect("localhost", "root", "", "mydb");
  
 // Check connection
 if ($connect === false) {
