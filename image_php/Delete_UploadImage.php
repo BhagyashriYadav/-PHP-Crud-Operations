@@ -8,7 +8,7 @@ class FB{
  
  function connect(){
   $this->link = mysqli_connect('localhost','root','') or die('Cannot connect to the DB');
-  mysqli_select_db($this->link,'mydb') or die('Cannot select the DB');
+  mysqli_select_db($this->link,'Mydb') or die('Cannot select the DB');
  }
  
  function storeInDB($id){
